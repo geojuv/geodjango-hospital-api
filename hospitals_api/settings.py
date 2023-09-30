@@ -46,9 +46,10 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]
 
-THIRD_PARTY_APPS = []
 
-PROJECTY_APPS = []
+THIRD_PARTY_APPS = ["rest_framework", "rest_framework_gis", "leaflet" ]
+
+PROJECTY_APPS = ['hospitals.apps.HospitalsConfig','boundaries.apps.BoundariesConfig']
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECTY_APPS
 
@@ -136,3 +137,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LEAFLET_CONFIG = {
+    "DEFAULT_CENTER": (-1.94, 29.87),
+    "DEFAULT_ZOOM": 8,
+    "MAX_ZOOM": 20,
+    "MIN_ZOOM": 3,
+    "SCALE": "both",
+    "ATTRIBUTION_PREFIX": "API-Imperfect Hospitals API",
+}
